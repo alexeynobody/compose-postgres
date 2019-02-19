@@ -1,4 +1,4 @@
-# Postgresql & PgAdmin powered by compose
+# Postgresql & PgAdmin & phpPgAdmin powered by compose
 
 
 ## Requirements:
@@ -29,3 +29,8 @@ This Compose file contains the following environment variables:
 * **URL:** `http://localhost:5050`
 * **Username:** pgadmin4@pgadmin.org (as a default)
 * **Password:** admin (as a default)
+
+## Access to phpPgAdmin: 
+* **URL:** `http://localhost:6060`
+
+p.s change localhost to your ip's
