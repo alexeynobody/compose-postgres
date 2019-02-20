@@ -31,7 +31,7 @@ services:
     restart: unless-stopped
 
   phppgadmin:
-  	container_name: phppgadmin
+    container_name: phppgadmin
     restart: always
     image: dockage/phppgadmin:latest
     ports:
