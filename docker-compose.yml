@@ -9,7 +9,7 @@ services:
       POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-changeme}
       PGDATA: /data/postgres
     volumes:
-       - ~/workspace/postgres:/data/postgres
+       - ./workspace/postgres:/data/postgres
     ports:
       - "5432:5432"
     networks:
@@ -23,7 +23,7 @@ services:
       PGADMIN_DEFAULT_EMAIL: ${PGADMIN_DEFAULT_EMAIL:-pgadmin4@pgadmin.org}
       PGADMIN_DEFAULT_PASSWORD: ${PGADMIN_DEFAULT_PASSWORD:-admin}
     volumes:
-       - ~/workspace/pgadmin:/var/lib/pgadmin
+       - ./workspace/pgadmin:/var/lib/pgadmin
     ports:
       - "${PGADMIN_PORT:-5050}:80"
     networks:
@@ -36,13 +36,11 @@ services:
     image: dockage/phppgadmin:latest
     ports:
     - "${PHPPGADMIN_PORT:-6060}:80"
-    external_links:
-    - postgres_container:docker-postgres
     networks:
     - postgres
     environment:
     - PHP_PG_ADMIN_SERVER_DESC=PostgreSQL
-    - PHP_PG_ADMIN_SERVER_HOST=docker-postgres
+    - PHP_PG_ADMIN_SERVER_HOST=postgres
     - PHP_PG_ADMIN_SERVER_PORT=5432
     - PHP_PG_ADMIN_SERVER_SSL_MODE=allow
     - PHP_PG_ADMIN_SERVER_DEFAULT_DB=template1
