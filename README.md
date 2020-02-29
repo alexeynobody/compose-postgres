@@ -7,7 +7,7 @@
 
 ## Quick Start
 * Clone or download this repository
-* Go inside of directory,  `cd compose-postgres`
+* Go inside of directory
 * Run this command `docker-compose up -d`
 
 
@@ -32,5 +32,3 @@ This Compose file contains the following environment variables:
 
 ## Access to phpPgAdmin: 
 * **URL:** `http://localhost:6060`
-
-p.s change localhost to your ip's
